@@ -5,5 +5,5 @@ rectangle ホテル{
     actor 経営者 #000000;line:Black;line.bold;
     actor ホテル従業員 #000000;line:Black;line.bold;
 }
-経営者<|-- ホテル従業員
+ホテル従業員<|-- 経営者
 @enduml
