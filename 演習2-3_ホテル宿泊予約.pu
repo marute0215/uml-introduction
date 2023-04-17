@@ -1,0 +1,9 @@
+@startuml ユースケース図
+actor 利用者 #000000;line:Black;line.bold;
+rectangle ホテル宿泊予約{
+usecase ログインする
+usecase 予約をする
+}
+利用者 -->予約をする
+ログインする<. 予約をする: << include >>
+@enduml
