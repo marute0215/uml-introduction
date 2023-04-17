@@ -3,7 +3,7 @@ actor 利用者 #000000;line:Black;line.bold;
 rectangle ホテル宿泊予約 {
 usecase ログインする
 usecase キャンペーン価格にする
-usecase (<u>予約する</u>\n拡張点\nキャンペーン中か確認する) as input
+usecase (<u>予約する</u>\n拡張点\nキャンペーン期間中) as input
 }
 利用者 -->input
 ログインする<. input: << include >>
