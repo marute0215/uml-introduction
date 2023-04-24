@@ -1,26 +1,35 @@
 @startuml
 skinparam classAttributeIconSize 0
 class 空車リスト  {
--車番号:String
+- 管理番号:String
 +希望日空車一覧():String
 +当日空車一覧():String
 }
 class 車 {
+- 管理番号:String
 - 車種:String
 - 駆動方式:String
-- 車番号:String
 }
 class 顧客 {
-- 予約者:void
-- 借用者:String
+- 顧客ID:int
+- 氏名:String
+- 電話番号:String
+- 郵便番号:String
+- 住所:String
+---
+SetName(氏名:String) void
 }
 class 予約 {
-- 顧客番号:int
+- 顧客ID:int
 - 予約番号:String
-- 車番号:String
+- 管理番号:String
 - 日付:date
 }
 class 貸出{
+- 貸出番号:String
+- 管理番号:String
+- 日付:date
+- 顧客ID:int
 + 貸出():void
 }
 @enduml
