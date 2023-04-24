@@ -15,6 +15,7 @@ class 顧客 {
 - 借用者:String
 }
 class 予約 {
+- 顧客番号:int
 - 予約番号:String
 - 車番号:String
 - 日付:date
