@@ -1,0 +1,16 @@
+@startuml ラーメン屋
+hide footbox
+Actor 客 as guest
+participant ":フロア定員" as clerk
+participant ":料理人" as cooker
+activate guest
+guest ->clerk:ラーメンを注文する
+activate clerk
+clerk -> cooker:調理を指示する
+activate cooker
+cooker -> cooker:料理をする
+deactivate cooker
+clerk <<-- cooker:ラーメン
+deactivate clerk
+guest <<-- clerk:ラーメン
+@enduml

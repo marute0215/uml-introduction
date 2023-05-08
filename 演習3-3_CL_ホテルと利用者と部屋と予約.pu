@@ -1,0 +1,26 @@
+@startuml
+class ホテル {
+-部屋: 部屋
+}
+class 部屋 {
+-タイプ: String
+-価格: int
+-キャンペーン価格: int
+}
+class 利用者 {
+-名前: String
+-住所: String
+-電話番号: String
+}
+
+class 予約 {
+-チェックイン日: date
+-滞在期間: String
+-値段: int
+}
+
+ホテル -> 部屋 
+ホテル *-- 利用者 
+利用者 o-- 予約 
+
+@enduml
