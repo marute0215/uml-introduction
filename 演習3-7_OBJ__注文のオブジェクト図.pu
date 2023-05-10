@@ -23,9 +23,6 @@ object "最重要顧客: VipCustomer" as vipcustomer {
 object "顧客: Customer" as customer1 {
     名前 = 高田利恵
 }
-object "顧客: Customer" as customer2 {
-    名前 = 大坪直之
-}
 
 vipcustomer -- order1
 customer1 -- order2
