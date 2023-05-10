@@ -1,4 +1,4 @@
-@startuml
+@startuml 7_OBJ_注文のオブジェクト図
 object "注文1: Order" as order1 {
     注文日 = 11月21日
     顧客 = 高橋洋平
