@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+object "<u>高橋洋平:重要顧客</u>" as customer1 {
+
+}
+object "<u>冷蔵庫:商品</u>" as product1 {
+    型式=R8765
+}
+object "<u>注文情報1:注文</u>" as order1 {
+    注文日=11月21日
+    注文数=3
+}
+object "<u>テレビ:商品</u>" as product2 {
+    型式=V12345
+}
+
+object "<u>髙田理恵:顧客</u>" as customer2 {
+    
+}
+object "<u>注文情報2:注文</u>" as order2 {
+    注文日=12月23日
+    注文数=1
+}
+object "<u>大坪直之:顧客</u>" as customer3 {
+    
+}
+object "<u>プロジェクタ:商品</u>" as product3 {
+    型式=P1122
+}
+
+customer1 -- order1
+order1 -- product1
+order1 -- product2
+
+customer2 -- order2
+order2 -- product1
+
+
+@enduml
