@@ -1,0 +1,34 @@
+@startuml
+object "注文1: Order" as order1 {
+    注文日 = 11月21日
+    顧客 = 高橋洋平
+}
+object "注文2: Order" as order2 {
+    注文日 = 12月23日
+    顧客 = 高田利恵
+}
+object "テレビ: Product" as tv {
+    型式 = V12345
+}
+object "冷蔵庫: Product" as fridge {
+    型式 = R8765
+}
+object "プロジェクタ: Product" as projector {
+    型式 = P1122
+}
+object "最重要顧客: VipCustomer" as vipcustomer {
+    名前 = 高橋洋平
+}
+object "顧客: Customer" as customer1 {
+    名前 = 高田利恵
+}
+object "顧客: Customer" as customer2 {
+    名前 = 大坪直之
+}
+
+vipcustomer -- order1
+customer1 -- order2
+order1 -- tv :2台注文する
+order1 -- fridge :1台注文する
+order2 -- fridge :1台注文する
+@enduml
