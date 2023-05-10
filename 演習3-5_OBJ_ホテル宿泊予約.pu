@@ -1,0 +1,32 @@
+@startuml
+
+object "ホテル" as hotel
+
+object "301号室" as room301 {
+  客室 = "シングル"
+  価格 = 11000
+}
+
+object "303号室" as room303 {
+  客室 = "シングル"
+  価格 = 9000
+}
+
+object "Aさん" as guestA {
+  チェックイン = "5月3日"
+  日数 = 2
+  部屋番号 = room301
+}
+
+object "Bさん" as guestB {
+  チェックイン = "5月3日"
+  日数 = 2
+  部屋番号 = room303
+}
+
+hotel --> room301
+hotel --> room303
+hotel --> guestA
+hotel --> guestB
+
+@enduml
