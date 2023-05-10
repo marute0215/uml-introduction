@@ -1,6 +1,6 @@
 @startuml
 
-object "ホテル" as hotel
+object "ホテルUML" as hotel
 
 object "301号室" as room301 {
   客室 = "シングル"
