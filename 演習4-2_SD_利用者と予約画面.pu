@@ -1,14 +1,15 @@
-@startuml 図4-4
+@startuml 
  hide footbox
 skinparam style strictuml /' 厳密なUMLに準拠する'/
-participant ":検索画面" as seach
-participant ":検索コントローラ" as control
+participant "利用者:入力画面" as gest
+participant ":予約画面" as ReservationScreen
 
-activate seach
-seach ->> control: 検索情報取得（）
-deactivate control
+activate gest
+gest ->> ReservationScreen: ログイン情報入力（）
 
-note right of seach : 非同期メッセージ
-
+activate ReservationScreen
+    ReservationScreen -> ReservationScreen: 同期（）
+    activate ReservationScreen
+deactivate ReservationScreen
 
 @enduml
