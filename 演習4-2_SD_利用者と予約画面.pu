@@ -8,7 +8,7 @@ activate gest
 gest ->> ReservationScreen: ログイン情報入力（）
 
 activate ReservationScreen
-    ReservationScreen -> ReservationScreen: 同期（）
+    ReservationScreen -> ReservationScreen: 確認操作（）
     activate ReservationScreen
 deactivate ReservationScreen
 
