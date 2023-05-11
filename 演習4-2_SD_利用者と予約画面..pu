@@ -1,0 +1,15 @@
+@startuml 
+ hide footbox
+skinparam style strictuml /' 厳密なUMLに準拠する'/
+participant "利用者:入力画面" as gest
+participant ":予約画面" as ReservationScreen
+
+activate gest
+gest ->> ReservationScreen: ログインする（）
+
+activate ReservationScreen
+    ReservationScreen -> ReservationScreen: 認証（）
+    activate ReservationScreen
+deactivate ReservationScreen
+
+@enduml
