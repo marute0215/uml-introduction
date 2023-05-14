@@ -1,0 +1,29 @@
+@startuml 商品注文
+hide footbox
+skinparam style strictuml
+Actor 受注係 as taker
+participant ":注文登録画面" as order <<boundary>>
+participant ":商品" as entity <<entity>>
+participant "注文" as reserve <<entity>>
+
+activate taker
+taker -> order : 商品情報確認()
+
+activate order
+activate entity
+order -> entity : 商品情報取得()
+order <<-- entity : 商品情報
+deactivate entity
+order -> order : 商品情報表示(商品情報)
+activate order
+deactivate order
+deactivate order
+
+taker -> order : 商品登録(注文情報)
+activate order
+create reserve
+order -->> reserve : 商品登録(商品情報) <<create>>
+
+deactivate taker
+
+@enduml

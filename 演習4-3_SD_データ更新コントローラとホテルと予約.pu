@@ -1,0 +1,18 @@
+@startuml
+hide footbox
+skinparam style strictuml
+
+participant "コントローラ" as control
+participant "ホテル" as hotel
+participant "予約" as reserve
+
+activate control
+control -> hotel : 予約操作を呼び出す
+activate hotel
+create reserve
+hotel -> reserve : 生成() <<create>>
+hotel -> hotel : 予約登録操作を呼び出す
+activate hotel
+deactivate hotel
+deactivate control
+@enduml
