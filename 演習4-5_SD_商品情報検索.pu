@@ -1,0 +1,34 @@
+@startuml 商品情報検索
+hide footbox
+skinparam style strictuml
+Actor 会員 as customer 
+participant ":商品検索画面" as search <<boundary>>
+participant ":商品検索" as searchcontrol <<control>>
+participant "商品" as goods <<entity>>
+participant "商品カテゴリ" as category <<entity>>
+
+activate customer
+customer -> search : 商品検索(商品番号)
+
+activate search
+search -> searchcontrol : 商品情報確認()
+
+activate searchcontrol
+create goods
+searchcontrol -->> goods : <<create>> 生成()
+loop 商品カテゴリ数
+create category
+searchcontrol -->> category : <<create>> 生成()
+searchcontrol -> goods : 商品カテゴリ設定()
+
+activate goods
+
+deactivate goods
+end loop
+searchcontrol -->> search : 商品情報
+
+deactivate searchcontrol 
+search -> search : 商品情報表示(商品情報)
+
+activate search
+@enduml
