@@ -8,10 +8,10 @@ participant "商品" as goods <<entity>>
 participant "商品カテゴリ" as category <<entity>>
 
 activate customer
-customer -> search : 商品検索(商品番号)
+customer -> search
 
 activate search
-search -> searchcontrol : 商品情報確認()
+search -> searchcontrol :商品検索(商品番号)
 
 activate searchcontrol
 create goods
