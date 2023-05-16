@@ -1,0 +1,22 @@
+@startuml 画像検索と閲覧
+hide footbox
+skinparam style strictuml
+actor ユーザー as user
+participant ":ブラウザ" as browser 
+participant ":Webサーバー" as web
+participant ":画像サーバー" as display
+
+user -> browser : 画像のリンクボタンを押す
+activate browser
+browser -> web : 画像のファイル名を送信
+activate web
+web -> display : 画像ファイルの検索要求
+activate display
+display -> web : 該当する画像ファイルを送信
+deactivate display
+web -> browser : 画像ファイルを送信
+deactivate web
+browser -> user : 画像ファイル送信
+deactivate browser
+
+@enduml
