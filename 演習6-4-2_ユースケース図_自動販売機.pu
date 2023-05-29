@@ -5,13 +5,15 @@ actor 客 #DDDDDD
 actor ベンダー #DDDDDD
 
 rectangle 自動販売機 {
-    usecase "飲み物選択" as 選択
     usecase "支払い" as 支払い
-    usecase "飲み物提供" as 提供
+    usecase "飲み物選択" as 選択
+    usecase "飲み物取り出す" as 取り出し
 }
 
 客 -- 選択
 客 -- 支払い
-提供 -- ベンダー
+客 -- 取り出し
+支払い -- ベンダー
+取り出し -- ベンダー
 @enduml
 

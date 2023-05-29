@@ -1,0 +1,33 @@
+@startuml
+hide footbox
+actor ":客" as user
+participant ":料金装置" as device
+participant ":ボタン" as botton
+participant ":ベンダー装置" as bender
+
+activate user
+user -> device :料金を投入
+
+activate device
+device -> botton :料金投入完了
+
+activate botton
+user <-- botton
+user -> botton :ボタンを押す
+botton -> bender :選択されたドリンクを伝える
+
+activate bender
+bender -> bender:ドリンクを排出する
+
+activate bender
+
+deactivate bender
+bender --> user :ドリンク
+
+deactivate botton
+
+deactivate device
+
+deactivate user
+
+@endum
