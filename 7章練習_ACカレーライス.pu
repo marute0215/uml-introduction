@@ -15,7 +15,8 @@ fork
 fork again
 :炊飯器でご飯を炊く;
 end fork
-:盛り付けて完成;
+:盛り付ける;
+:カレーライス]
 stop
 @enduml
 
